@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad de Nadar - Polimorfismo</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f7f6; }
+        h1 { color: #0077b6; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background-color: white; }
+        th, td { border: 1px solid #cccccc; padding: 12px; text-align: left; }
+        th { background-color: #0077b6; color: white; }
+        tr:nth-child(even) { background-color: #e0f7fa; }
+    </style>
+</head>
+<body>
+
+<h1>Resultados de Actividades Acuáticas (Polimorfismo)</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Sumergirse</th>
+        <th>Flotación</th>
+        <th>Nadar Hacia</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="actividad, iterStat : ${actividades}">
+        <td th:text="${iterStat.count}">1</td>
+        <td th:text="${actividad.sumergirse(actividad.getNadador())}"></td>
+        <td th:text="${actividad.flotar(actividad.getNadador())}"></td>
+        <td th:text="${actividad.nadarHacia(actividad.getNadador())}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
