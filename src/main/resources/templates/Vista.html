@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Actividad de Nadar - Polimorfismo</title>
@@ -15,7 +14,7 @@
 </head>
 <body>
 
-<h1>Resultados de Actividades Acuáticas (Polimorfismo)</h1>
+<h1>Resultados de Actividades Acuáticas (Polimorfismo en Java)</h1>
 
 <table>
     <thead>
@@ -27,11 +26,11 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="actividad, iterStat : ${actividades}">
+    <tr th:each="res, iterStat : ${resultados}">
         <td th:text="${iterStat.count}">1</td>
-        <td th:text="${actividad.sumergirse(actividad.getNadador())}"></td>
-        <td th:text="${actividad.flotar(actividad.getNadador())}"></td>
-        <td th:text="${actividad.nadarHacia(actividad.getNadador())}"></td>
+        <td th:text="${res.sumergirse}"></td>
+        <td th:text="${res.flotar}"></td>
+        <td th:text="${res.nadarHacia}"></td>
     </tr>
     </tbody>
 </table>

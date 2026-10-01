@@ -1,30 +1,19 @@
 package com.trabajo1.actividad.de.nadar.modelo;
 
-public class Buceador implements ActividadNadar{
-    private String nivelExperiencia;
-    private Nadador nadador;
+import java.util.List;
 
-    public Buceador(String nivelExperiencia, Nadador nadador) {
-        this.nivelExperiencia = nivelExperiencia;
-        this.nadador = nadador;
+public class Buceador implements ActividadNadar {
+    private String nombre;
+    private List<Nadador> listaNadadores;
+
+    public Buceador(String nombre, List<Nadador> listaNadadores) {
+        this.nombre = nombre;
+        this.listaNadadores = listaNadadores;
     }
 
-    @Override
-    public String sumergirse(Nadador n) {
-        return "El buceador " + nivelExperiencia + " se sumerge acompañando a " + n.getNombre() + ".";
-    }
-
-    @Override
-    public String flotar(Nadador n) {
-        return "El buceador " + nivelExperiencia + " mantiene flotabilidad neutra con " + n.getNombre() + ".";
-    }
-
-    @Override
-    public String nadarHacia(Nadador n) {
-        return "El buceador " + nivelExperiencia + " nadará hacia " + n.getNombre() + " (estilo: " + n.getEstilo() + ").";
-    }
-
-    public Nadador getNadador() {
-        return nadador;
-    }
+    @Override public String getNombre() { return nombre; }
+    @Override public List<Nadador> getListaNadadores() { return listaNadadores; }
+    @Override public String sumergirse() { return "El buceador " + nombre + " desciende al fondo."; }
+    @Override public String flotar() { return "El buceador " + nombre + " flota con su equipo."; }
+    @Override public String nadarHacia() { return "El buceador " + nombre + " nada hacia el arrecife."; }
 }

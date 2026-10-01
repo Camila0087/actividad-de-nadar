@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Petición 2</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        ul { line-height: 1.8; }
+    </style>
+</head>
+<body>
+<h2>Estadísticas de Edad de los Nadadores</h2>
+<ul>
+    <li><strong>Conteo total de nadadores:</strong> <span th:text="${conteo}">0</span></li>
+    <li><strong>Suma total de edades:</strong> <span th:text="${suma}">0</span></li>
+    <li><strong>Promedio de edad:</strong> <span th:text="${promedio}">0.0</span></li>
+    <li><strong>Edad Mínima:</strong> <span th:text="${minimo}">0</span></li>
+    <li><strong>Edad Máxima:</strong> <span th:text="${maximo}">0</span></li>
+</ul>
+</body>
+</html>

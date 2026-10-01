@@ -1,29 +1,19 @@
 package com.trabajo1.actividad.de.nadar.modelo;
 
-public class Pez implements ActividadNadar{
-    private String especie;
-    private Nadador nadador;
+import java.util.List;
 
-    public Pez(String especie, Nadador nadador) {
-        this.especie = especie;
-        this.nadador = nadador;
-    }
-    @Override
-    public String sumergirse(Nadador n) {
-        return "El pez " + especie + " se sumerge junto al nadador " + n.getNombre() + " en estilo " + n.getEstilo() + ".";
+public class Pez implements ActividadNadar {
+    private String nombre;
+    private List<Nadador> listaNadadores;
+
+    public Pez(String nombre, List<Nadador> listaNadadores) {
+        this.nombre = nombre;
+        this.listaNadadores = listaNadadores;
     }
 
-    @Override
-    public String flotar(Nadador n) {
-        return "El pez " + especie + " flota en reposo cerca de " + n.getNombre() + ".";
-    }
-
-    @Override
-    public String nadarHacia(Nadador n) {
-        return "El pez " + especie + " nada velozmente hacia " + n.getNombre() + ".";
-    }
-
-    public Nadador getNadador() {
-        return nadador;
-    }
+    @Override public String getNombre() { return nombre; }
+    @Override public List<Nadador> getListaNadadores() { return listaNadadores; }
+    @Override public String sumergirse() { return "El pez " + nombre + " se sumerge."; }
+    @Override public String flotar() { return "El pez " + nombre + " flota."; }
+    @Override public String nadarHacia() { return "El pez " + nombre + " nada hacia adelante."; }
 }

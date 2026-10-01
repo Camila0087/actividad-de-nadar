@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Petición 3</title>
+</head>
+<body>
+    <h2>Estilos de Natación Obtenidos:</h2>
+    <ul>
+        <li th:each="estilo : ${estilos}" th:text="${estilo}"></li>
+    </ul>
+</body>
+</html>

@@ -1,30 +1,19 @@
 package com.trabajo1.actividad.de.nadar.modelo;
 
-public class Delfin implements ActividadNadar{
-    private String nombreDelfin;
-    private Nadador nadador;
+import java.util.List;
 
-    public Delfin(String nombreDelfin, Nadador nadador) {
-        this.nombreDelfin = nombreDelfin;
-        this.nadador = nadador;
+public class Delfin implements ActividadNadar {
+    private String nombre;
+    private List<Nadador> listaNadadores;
+
+    public Delfin(String nombre, List<Nadador> listaNadadores) {
+        this.nombre = nombre;
+        this.listaNadadores = listaNadadores;
     }
 
-    @Override
-    public String sumergirse(Nadador n) {
-        return "El delfín " + nombreDelfin + " realiza una inmersión profunda con " + n.getNombre() + ".";
-    }
-
-    @Override
-    public String flotar(Nadador n) {
-        return "El delfín " + nombreDelfin + " flota jugetón al lado de " + n.getNombre() + ".";
-    }
-
-    @Override
-    public String nadarHacia(Nadador n) {
-        return "El delfín " + nombreDelfin + " nada hacia " + n.getNombre() + " usando su estilo " + n.getEstilo() + ".";
-    }
-
-    public Nadador getNadador() {
-        return nadador;
-    }
+    @Override public String getNombre() { return nombre; }
+    @Override public List<Nadador> getListaNadadores() { return listaNadadores; }
+    @Override public String sumergirse() { return "El delfín " + nombre + " se sumerge."; }
+    @Override public String flotar() { return "El delfín " + nombre + " flota."; }
+    @Override public String nadarHacia() { return "El delfín " + nombre + " nada hacia la orilla."; }
 }
